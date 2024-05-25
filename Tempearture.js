@@ -1,27 +1,16 @@
-const prompt = require("prompt-sync")();
-let temperature = prompt("Enter temperature in Celcius: ");
+let temp = prompt("Enter temprature value if temperature in Celcius (C) and temperature in Farenhiet (F): ");
 
-if(temperature < 0)
+if(temp == "C")
 {
-    console.log("Its freezing outside");
-}
-
-else if(temperature >= 0 && temperature <= 10)
-{
-    console.log("Its cold outside");
-}
-
-else if(temperature >= 11 && temperature <= 20)
-{
-    console.log("Its a pleasant day");
-}
-
-else if(temperature >= 21 && temperature <= 30)
-{
-    console.log("Its a warm day");
+    let temperature = prompt("Enter temperature value in Celcius: ");
+    let f = (1.8*temperature) + 32;
+    console.log("temperature vaue in farenhiet: " + f);
 }
 
 else
 {
-    console.log("Its hot outside");
+    let temperature = prompt("Enter temperature value in Farenhiet: ");
+    let c = temperature - 32;
+    let d = c/1.8;
+    console.log("temperature vaue in celcius: " + d);
 }
